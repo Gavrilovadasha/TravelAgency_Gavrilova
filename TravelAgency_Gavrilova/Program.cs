@@ -1,8 +1,10 @@
-﻿using System;
+﻿using DataGrid.Storage.Memory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TourManagement;
 
 namespace TravelAgency_Gavrilova
 {
@@ -16,7 +18,10 @@ namespace TravelAgency_Gavrilova
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            var storage = new MemoryTourStorage();
+            var manager = new TourManagment(storage);
+
+            Application.Run(new RegisterOfBurningTours(manager));
         }
     }
 }

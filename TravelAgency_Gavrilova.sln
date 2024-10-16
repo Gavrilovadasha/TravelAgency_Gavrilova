@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency_Gavrilova", "TravelAgency_Gavrilova\TravelAgency_Gavrilova.csproj", "{DDE7336A-A822-485D-93E9-2C43BDAB8710}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridTravelAgency", "TravelAgency_Gavrilova\DataGridTravelAgency.csproj", "{DDE7336A-A822-485D-93E9-2C43BDAB8710}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid.Contracts", "TravelAgency_Gavrilova\DataGrid.Contracts\DataGrid.Contracts.csproj", "{A7C0853C-42AB-4FB3-8BE4-FCD5A86F3541}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid.TourManagment", "DataGrid.TourManagment\DataGrid.TourManagment.csproj", "{716FAC7E-4A89-4733-AAFA-5B584DFCBAC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid.Storage.Memory", "DataGrid.Storage.Memory\DataGrid.Storage.Memory.csproj", "{A553BE45-9178-4C25-8779-58C78CE00BA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{DDE7336A-A822-485D-93E9-2C43BDAB8710}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDE7336A-A822-485D-93E9-2C43BDAB8710}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDE7336A-A822-485D-93E9-2C43BDAB8710}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7C0853C-42AB-4FB3-8BE4-FCD5A86F3541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C0853C-42AB-4FB3-8BE4-FCD5A86F3541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7C0853C-42AB-4FB3-8BE4-FCD5A86F3541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C0853C-42AB-4FB3-8BE4-FCD5A86F3541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{716FAC7E-4A89-4733-AAFA-5B584DFCBAC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{716FAC7E-4A89-4733-AAFA-5B584DFCBAC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{716FAC7E-4A89-4733-AAFA-5B584DFCBAC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{716FAC7E-4A89-4733-AAFA-5B584DFCBAC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A553BE45-9178-4C25-8779-58C78CE00BA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A553BE45-9178-4C25-8779-58C78CE00BA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A553BE45-9178-4C25-8779-58C78CE00BA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A553BE45-9178-4C25-8779-58C78CE00BA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
