@@ -50,6 +50,7 @@
             this.NumberVacationers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SurchargesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WIFI = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.TotalCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -66,7 +67,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1316, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1418, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -96,9 +97,9 @@
             this.toolStripBtnAdd,
             this.toolStripButton2,
             this.toolStripButton3});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 30);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1316, 27);
+            this.toolStrip2.Size = new System.Drawing.Size(1418, 31);
             this.toolStrip2.TabIndex = 2;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -108,7 +109,7 @@
             this.toolStripBtnAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBtnAdd.Image")));
             this.toolStripBtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripBtnAdd.Name = "toolStripBtnAdd";
-            this.toolStripBtnAdd.Size = new System.Drawing.Size(29, 24);
+            this.toolStripBtnAdd.Size = new System.Drawing.Size(29, 28);
             this.toolStripBtnAdd.Text = "toolStripButton1";
             this.toolStripBtnAdd.Click += new System.EventHandler(this.toolStripBtnAdd_Click);
             // 
@@ -143,15 +144,16 @@
             this.CostVacationersColumn,
             this.NumberVacationers,
             this.SurchargesColumn,
-            this.WIFI});
+            this.WIFI,
+            this.TotalCost});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 55);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 61);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1316, 486);
+            this.dataGridView1.Size = new System.Drawing.Size(1418, 480);
             this.dataGridView1.TabIndex = 3;
             // 
             // statusStrip1
@@ -165,7 +167,7 @@
             this.toolStripStatusLabel4});
             this.statusStrip1.Location = new System.Drawing.Point(0, 515);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1316, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1418, 26);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -261,11 +263,20 @@
             this.WIFI.ReadOnly = true;
             this.WIFI.Width = 125;
             // 
+            // TotalCost
+            // 
+            this.TotalCost.DataPropertyName = "TotalCost";
+            this.TotalCost.HeaderText = "Итоговая стоимость";
+            this.TotalCost.MinimumWidth = 6;
+            this.TotalCost.Name = "TotalCost";
+            this.TotalCost.ReadOnly = true;
+            this.TotalCost.Width = 125;
+            // 
             // RegisterOfBurningTours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1316, 541);
+            this.ClientSize = new System.Drawing.Size(1418, 541);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip2);
@@ -310,6 +321,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberVacationers;
         private System.Windows.Forms.DataGridViewTextBoxColumn SurchargesColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn WIFI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalCost;
     }
 }
 
