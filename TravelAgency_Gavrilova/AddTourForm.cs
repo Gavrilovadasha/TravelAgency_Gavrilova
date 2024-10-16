@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TravelAgency_Gavrilova
 {
@@ -30,36 +31,47 @@ namespace TravelAgency_Gavrilova
                     NumberVacationers = tour.NumberVacationers,
                     Surcharges = tour.Surcharges,
                     WIFI = tour.WIFI,
-
+                    TotalCost = tour.TotalCost,
                 };
 
             foreach (var item in Enum.GetValues(typeof(Direction)))
             {
-                comboBox1.Items.Add(item);
+                cmbDirection.Items.Add(item);
             }
-            if (comboBox1.Items.Count > 0)
+            if (cmbDirection.Items.Count > 0)
             {
-                comboBox1.SelectedIndex = 0;
+                cmbDirection.SelectedIndex = 0;
             }
 
-            comboBox1.AddBinding(x => x.SelectedItem, this.tour, x => x.Direction, errorProvider1);
-            dateTimePicker1.AddBinding(x => x.Value, this.tour, x => x.DeparturDate, errorProvider1);
-            numericUpDown1.AddBinding(x => x.Value, this.tour, x => x.NumberNights, errorProvider1);
-            textBox1.AddBinding(x => x.Text, this.tour, x => x.CostVacationers, errorProvider1);
-            numericUpDown2.AddBinding(x => x.Value, this.tour, x => x.NumberVacationers, errorProvider1);
-            textBox2.AddBinding(x => x.Text, this.tour, x => x.Surcharges, errorProvider1);
-            checkBox1.AddBinding(x => x.Checked, this.tour, x => x.WIFI, errorProvider1);
+            cmbDirection.AddBinding(x => x.SelectedItem, this.tour, x => x.Direction, errorProvider1);
+            dTPDeparturDate.AddBinding(x => x.Value, this.tour, x => x.DeparturDate, errorProvider1);
+            numUpDownNumberNights.AddBinding(x => x.Value, this.tour, x => x.NumberNights, errorProvider1);
+            numUpDownCostVacationers.AddBinding(x => x.Value, this.tour, x => x.CostVacationers, errorProvider1);
+            numUpDownNumberVacationers.AddBinding(x => x.Value, this.tour, x => x.NumberVacationers, errorProvider1);
+            numeUpDownSurcharges.AddBinding(x => x.Value, this.tour, x => x.Surcharges, errorProvider1);
+            txtTotalCost.AddBinding(x => x.Text, this.tour, x => x.TotalCost, errorProvider1);
+            checkBoxWIFI.AddBinding(x => x.Checked, this.tour, x => x.WIFI, errorProvider1);
+
         }
 
+        private void TotalCostCalculate()
+        {
+            txtTotalCost.Text = (((numUpDownCostVacationers.Value * numUpDownNumberVacationers.Value) + numeUpDownSurcharges.Text));
+        }
+
+        private void TotalCostCalculate(object sender, EventArgs e)
+        {
+            TotalCostCalculate();
+        }
         public Tour Tour => tour;
 
-        private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
+        private void cmbDirection_DrawItem(object sender, DrawItemEventArgs e)
         {
             e.DrawBackground();
 
             if (e.Index > -1)
             {
-                var value = (Direction)(sender as ComboBox).Items[e.Index];
+                var value = (Direction)(sender as System.Windows.Forms.ComboBox).Items[e.Index];
                 e.Graphics.DrawString(GetDisplayValue(value),
                     e.Font,
                     new SolidBrush(e.ForeColor),
@@ -74,5 +86,7 @@ namespace TravelAgency_Gavrilova
             var attributes = field.GetCustomAttributes<DescriptionAttribute>(false);
             return attributes.FirstOrDefault()?.Description;
         }
+
+        
     }
 }

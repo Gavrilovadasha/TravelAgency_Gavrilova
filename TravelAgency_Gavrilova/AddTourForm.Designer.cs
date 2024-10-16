@@ -42,20 +42,24 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.cmbDirection = new System.Windows.Forms.ComboBox();
+            this.dTPDeparturDate = new System.Windows.Forms.DateTimePicker();
+            this.numUpDownNumberNights = new System.Windows.Forms.NumericUpDown();
+            this.checkBoxWIFI = new System.Windows.Forms.CheckBox();
+            this.numUpDownNumberVacationers = new System.Windows.Forms.NumericUpDown();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtTotalCost = new System.Windows.Forms.TextBox();
+            this.numUpDownCostVacationers = new System.Windows.Forms.NumericUpDown();
+            this.numeUpDownSurcharges = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumberNights)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumberVacationers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownCostVacationers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeUpDownSurcharges)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -106,7 +110,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MV Boli", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 157);
+            this.label1.Location = new System.Drawing.Point(51, 161);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 17);
@@ -117,7 +121,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MV Boli", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(54, 205);
+            this.label2.Location = new System.Drawing.Point(55, 205);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 17);
@@ -139,7 +143,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("MV Boli", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(52, 284);
+            this.label4.Location = new System.Drawing.Point(51, 284);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(162, 34);
@@ -150,7 +154,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MV Boli", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(52, 350);
+            this.label5.Location = new System.Drawing.Point(51, 350);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(156, 17);
@@ -186,7 +190,7 @@
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnOK);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 493);
+            this.panel2.Location = new System.Drawing.Point(0, 543);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(494, 106);
@@ -203,88 +207,128 @@
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // cmbDirection
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(245, 149);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 29);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
+            this.cmbDirection.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cmbDirection.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbDirection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDirection.FormattingEnabled = true;
+            this.cmbDirection.Location = new System.Drawing.Point(245, 149);
+            this.cmbDirection.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cmbDirection.Name = "cmbDirection";
+            this.cmbDirection.Size = new System.Drawing.Size(182, 29);
+            this.cmbDirection.TabIndex = 6;
+            this.cmbDirection.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cmbDirection_DrawItem);
             // 
-            // dateTimePicker1
+            // dTPDeparturDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(245, 194);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(182, 28);
-            this.dateTimePicker1.TabIndex = 12;
+            this.dTPDeparturDate.Location = new System.Drawing.Point(245, 194);
+            this.dTPDeparturDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dTPDeparturDate.Name = "dTPDeparturDate";
+            this.dTPDeparturDate.Size = new System.Drawing.Size(182, 28);
+            this.dTPDeparturDate.TabIndex = 12;
             // 
-            // numericUpDown1
+            // numUpDownNumberNights
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(245, 239);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(182, 28);
-            this.numericUpDown1.TabIndex = 13;
+            this.numUpDownNumberNights.Location = new System.Drawing.Point(245, 239);
+            this.numUpDownNumberNights.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.numUpDownNumberNights.Name = "numUpDownNumberNights";
+            this.numUpDownNumberNights.Size = new System.Drawing.Size(182, 28);
+            this.numUpDownNumberNights.TabIndex = 13;
             // 
-            // checkBox1
+            // checkBoxWIFI
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("MV Boli", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(172, 453);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(140, 21);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.Text = "Наличие WI-FI";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxWIFI.AutoSize = true;
+            this.checkBoxWIFI.Font = new System.Drawing.Font("MV Boli", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxWIFI.Location = new System.Drawing.Point(170, 498);
+            this.checkBoxWIFI.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.checkBoxWIFI.Name = "checkBoxWIFI";
+            this.checkBoxWIFI.Size = new System.Drawing.Size(140, 21);
+            this.checkBoxWIFI.TabIndex = 14;
+            this.checkBoxWIFI.Text = "Наличие WI-FI";
+            this.checkBoxWIFI.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // numUpDownNumberVacationers
             // 
-            this.textBox1.Location = new System.Drawing.Point(245, 390);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 28);
-            this.textBox1.TabIndex = 15;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(245, 290);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(182, 28);
-            this.textBox2.TabIndex = 16;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(245, 339);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(182, 28);
-            this.numericUpDown2.TabIndex = 17;
+            this.numUpDownNumberVacationers.Location = new System.Drawing.Point(245, 339);
+            this.numUpDownNumberVacationers.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.numUpDownNumberVacationers.Name = "numUpDownNumberVacationers";
+            this.numUpDownNumberVacationers.Size = new System.Drawing.Size(182, 28);
+            this.numUpDownNumberVacationers.TabIndex = 17;
+            this.numUpDownNumberVacationers.ValueChanged += new System.EventHandler(this.TotalCostCalculate);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("MV Boli", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(52, 448);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(139, 17);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Общая стоимость";
+            // 
+            // txtTotalCost
+            // 
+            this.txtTotalCost.Location = new System.Drawing.Point(245, 437);
+            this.txtTotalCost.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTotalCost.Name = "txtTotalCost";
+            this.txtTotalCost.ReadOnly = true;
+            this.txtTotalCost.Size = new System.Drawing.Size(182, 28);
+            this.txtTotalCost.TabIndex = 19;
+            // 
+            // numUpDownCostVacationers
+            // 
+            this.numUpDownCostVacationers.Location = new System.Drawing.Point(245, 290);
+            this.numUpDownCostVacationers.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.numUpDownCostVacationers.Maximum = new decimal(new int[] {
+            -469762048,
+            -590869294,
+            5421010,
+            0});
+            this.numUpDownCostVacationers.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.numUpDownCostVacationers.Name = "numUpDownCostVacationers";
+            this.numUpDownCostVacationers.Size = new System.Drawing.Size(182, 28);
+            this.numUpDownCostVacationers.TabIndex = 20;
+            this.numUpDownCostVacationers.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.numUpDownCostVacationers.ValueChanged += new System.EventHandler(this.TotalCostCalculate);
+            // 
+            // numeUpDownSurcharges
+            // 
+            this.numeUpDownSurcharges.Location = new System.Drawing.Point(245, 390);
+            this.numeUpDownSurcharges.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.numeUpDownSurcharges.Name = "numeUpDownSurcharges";
+            this.numeUpDownSurcharges.Size = new System.Drawing.Size(182, 28);
+            this.numeUpDownSurcharges.TabIndex = 21;
+            this.numeUpDownSurcharges.ValueChanged += new System.EventHandler(this.TotalCostCalculate);
             // 
             // AddTourForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(494, 599);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(494, 649);
+            this.Controls.Add(this.numeUpDownSurcharges);
+            this.Controls.Add(this.numUpDownCostVacationers);
+            this.Controls.Add(this.txtTotalCost);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.numUpDownNumberVacationers);
+            this.Controls.Add(this.checkBoxWIFI);
+            this.Controls.Add(this.numUpDownNumberNights);
+            this.Controls.Add(this.dTPDeparturDate);
+            this.Controls.Add(this.cmbDirection);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -302,9 +346,11 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumberNights)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumberVacationers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownCostVacationers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeUpDownSurcharges)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,16 +368,18 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.ComboBox cmbDirection;
+        private System.Windows.Forms.DateTimePicker dTPDeparturDate;
+        private System.Windows.Forms.NumericUpDown numUpDownNumberNights;
+        private System.Windows.Forms.CheckBox checkBoxWIFI;
+        private System.Windows.Forms.NumericUpDown numUpDownNumberVacationers;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox txtTotalCost;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown numUpDownCostVacationers;
+        private System.Windows.Forms.NumericUpDown numeUpDownSurcharges;
     }
 }

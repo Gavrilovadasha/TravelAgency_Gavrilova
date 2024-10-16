@@ -27,7 +27,7 @@ namespace DataGrid.Contracts.Models
         /// <summary>
         /// Стоимость для одного отдыхающего
         /// </summary>
-        public string CostVacationers { get; set; }
+        public decimal CostVacationers { get; set; }
 
         /// <summary>
         /// Количество отдыхающих
@@ -37,11 +37,13 @@ namespace DataGrid.Contracts.Models
         /// <summary>
         /// Доплаты
         /// </summary>
-        public string Surcharges { get; set; }
+        public decimal Surcharges { get; set; }
 
         /// <summary>
         /// Наличие интернета
         /// </summary>
         public bool WIFI { get; set; }
+
+        public decimal TotalCost { get; set; }
     }
 }
