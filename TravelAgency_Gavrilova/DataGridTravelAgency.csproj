@@ -47,26 +47,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddTourForm.cs">
+    <Compile Include="Form\AddTourForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddTourForm.Designer.cs">
+    <Compile Include="Form\AddTourForm.Designer.cs">
       <DependentUpon>AddTourForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\DataGenerator.cs" />
     <Compile Include="Class\Extensions.cs" />
-    <Compile Include="RegisterOfBurningTours.cs">
+    <Compile Include="Form\RegisterOfBurningTours.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterOfBurningTours.Designer.cs">
+    <Compile Include="Form\RegisterOfBurningTours.Designer.cs">
       <DependentUpon>RegisterOfBurningTours.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddTourForm.resx">
+    <EmbeddedResource Include="Form\AddTourForm.resx">
       <DependentUpon>AddTourForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegisterOfBurningTours.resx">
+    <EmbeddedResource Include="Form\RegisterOfBurningTours.resx">
       <DependentUpon>RegisterOfBurningTours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -109,8 +109,6 @@
       <Name>DataGrid.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Form\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

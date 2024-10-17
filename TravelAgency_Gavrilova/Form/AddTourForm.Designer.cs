@@ -290,25 +290,20 @@
             -590869294,
             5421010,
             0});
-            this.numUpDownCostVacationers.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.numUpDownCostVacationers.Name = "numUpDownCostVacationers";
             this.numUpDownCostVacationers.Size = new System.Drawing.Size(182, 28);
             this.numUpDownCostVacationers.TabIndex = 20;
-            this.numUpDownCostVacationers.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.numUpDownCostVacationers.ValueChanged += new System.EventHandler(this.TotalCostCalculate);
             // 
             // numeUpDownSurcharges
             // 
             this.numeUpDownSurcharges.Location = new System.Drawing.Point(245, 390);
             this.numeUpDownSurcharges.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.numeUpDownSurcharges.Maximum = new decimal(new int[] {
+            1661992960,
+            1808227885,
+            5,
+            0});
             this.numeUpDownSurcharges.Name = "numeUpDownSurcharges";
             this.numeUpDownSurcharges.Size = new System.Drawing.Size(182, 28);
             this.numeUpDownSurcharges.TabIndex = 21;

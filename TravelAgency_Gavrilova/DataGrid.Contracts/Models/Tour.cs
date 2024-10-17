@@ -22,28 +22,28 @@ namespace DataGrid.Contracts.Models
         /// <summary>
         /// Количество ночей
         /// </summary>
-        public decimal NumberNights { get; set; }
+        public int NumberNights { get; set; }
 
         /// <summary>
         /// Стоимость для одного отдыхающего
         /// </summary>
-        public decimal CostVacationers { get; set; }
+        public double CostVacationers { get; set; }
 
         /// <summary>
         /// Количество отдыхающих
         /// </summary>
-        public decimal NumberVacationers { get; set; }
+        public int NumberVacationers { get; set; }
 
         /// <summary>
         /// Доплаты
         /// </summary>
-        public decimal Surcharges { get; set; }
+        public double Surcharges { get; set; }
 
         /// <summary>
         /// Наличие интернета
         /// </summary>
         public bool WIFI { get; set; }
 
-        public decimal TotalCost { get; set; }
+        public double TotalCost { get; set; }
     }
 }

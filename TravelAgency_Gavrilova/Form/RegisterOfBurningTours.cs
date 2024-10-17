@@ -53,5 +53,34 @@ namespace TravelAgency_Gavrilova
             bindingSource.DataSource = await tourManagment.GetAllAsync();
             await SetStats();
         }
+
+        private async void toolStripBtnDel_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                var data = (Tour)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+                if (MessageBox.Show($"Вы действительно хотите удалить {data.Direction}?", "Удаление записи", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    await tourManagment.DeleteAsync(data.ID);
+                    bindingSource.ResetBindings(false);
+                    await SetStats();
+                }
+            }
+        }
+
+        private async void toolStripBtnEdit_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                var data = (Tour)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+                var tourForm = new AddTourForm(data);
+                if (tourForm.ShowDialog(this) == DialogResult.OK)
+                {
+                    await tourManagment.EditAsync(tourForm.Tour);
+                    bindingSource.ResetBindings(false);
+                    await SetStats();
+                }
+            }
+        }
     }
 }
