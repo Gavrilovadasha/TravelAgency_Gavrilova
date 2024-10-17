@@ -15,6 +15,8 @@ namespace TravelAgency_Gavrilova
         public AddTourForm(Tour tour = null)
         {
             InitializeComponent();
+            TotalCostCalculate();
+
 
             this.tour = tour == null ? DataGenerator.CreateTour(x =>
                 {
@@ -49,9 +51,8 @@ namespace TravelAgency_Gavrilova
             numUpDownCostVacationers.AddBinding(x => x.Value, this.tour, x => x.CostVacationers, errorProvider1);
             numUpDownNumberVacationers.AddBinding(x => x.Value, this.tour, x => x.NumberVacationers, errorProvider1);
             numeUpDownSurcharges.AddBinding(x => x.Value, this.tour, x => x.Surcharges, errorProvider1);
-            txtTotalCost.AddBinding(x => x.Text, this.tour, x => x.TotalCost, errorProvider1);
             checkBoxWIFI.AddBinding(x => x.Checked, this.tour, x => x.WIFI, errorProvider1);
-
+            txtTotalCost.AddBinding(x => x.Text, this.tour, x => x.TotalCost, errorProvider1);
         }
 
         private void TotalCostCalculate()
@@ -59,9 +60,21 @@ namespace TravelAgency_Gavrilova
             txtTotalCost.Text = (((numUpDownCostVacationers.Value * numUpDownNumberVacationers.Value) + numeUpDownSurcharges.Text));
         }
 
+        private bool isUpdating = false;
         private void TotalCostCalculate(object sender, EventArgs e)
         {
-            TotalCostCalculate();
+            if (isUpdating) return;
+
+            isUpdating = true;
+
+            try
+            {
+                TotalCostCalculate(sender,e);
+            }
+            finally
+            {
+                isUpdating = false;
+            }
         }
         public Tour Tour => tour;
 
