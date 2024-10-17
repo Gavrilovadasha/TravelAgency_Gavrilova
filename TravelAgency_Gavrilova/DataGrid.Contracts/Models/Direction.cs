@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace DataGrid.Contracts.Models
 {
+    /// <summary>
+    /// Перечисление представляющее направления туров.
+    /// </summary>
     public enum Direction
     {
         [Description("Турция")]

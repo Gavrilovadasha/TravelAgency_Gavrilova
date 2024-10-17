@@ -27,7 +27,7 @@ namespace DataGrid.Contracts.Models
         /// <summary>
         /// Стоимость для одного отдыхающего
         /// </summary>
-        public double CostVacationers { get; set; }
+        public int CostVacationers { get; set; }
 
         /// <summary>
         /// Количество отдыхающих
@@ -37,13 +37,28 @@ namespace DataGrid.Contracts.Models
         /// <summary>
         /// Доплаты
         /// </summary>
-        public double Surcharges { get; set; }
+        public int Surcharges { get; set; }
 
         /// <summary>
         /// Наличие интернета
         /// </summary>
         public bool WIFI { get; set; }
 
-        public double TotalCost { get; set; }
+        public int TotalCost { get; set; }
+
+        /// <summary>
+        /// Конструктор по умолчанию для класса Tour.
+        /// </summary>
+        public Tour()
+        {
+            TotalCost = 0;
+        }
+        /// <summary>
+        /// Вычисляет общую стоимость тура.
+        /// </summary>
+        public decimal CalculateTotalCost()
+        {
+            return CostVacationers * NumberVacationers + Surcharges;
+        }
     }
 }

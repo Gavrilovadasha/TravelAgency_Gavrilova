@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace TravelAgency_Gavrilova
 {
     /// <summary>
-    /// 
+    /// Форма регистра горящих туров.
     /// </summary>
     public partial class RegisterOfBurningTours : Form
     {
@@ -16,7 +16,7 @@ namespace TravelAgency_Gavrilova
         private BindingSource bindingSource;
 
         /// <summary>
-        /// 
+        /// Инициализирует новый экземпляр класса RegisterOfBurningTours.
         /// </summary>
         public RegisterOfBurningTours(ITourManagment tourManagment)
         {
@@ -39,6 +39,10 @@ namespace TravelAgency_Gavrilova
                 await SetStats();
             }
         }
+
+        /// <summary>
+        /// Загружает данные из источника данных в DataGridView.
+        /// </summary>
         public async Task SetStats()
         {
             var result = await tourManagment.GetStatsAsync();
