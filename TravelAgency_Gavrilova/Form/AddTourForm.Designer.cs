@@ -48,10 +48,8 @@
             this.checkBoxWIFI = new System.Windows.Forms.CheckBox();
             this.numUpDownNumberVacationers = new System.Windows.Forms.NumericUpDown();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtTotalCost = new System.Windows.Forms.TextBox();
             this.numUpDownCostVacationers = new System.Windows.Forms.NumericUpDown();
-            this.numeUpDownSurcharges = new System.Windows.Forms.NumericUpDown();
+            this.numUpDownSurcharges = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -59,7 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumberVacationers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownCostVacationers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numeUpDownSurcharges)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownSurcharges)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -190,7 +188,7 @@
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnOK);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 543);
+            this.panel2.Location = new System.Drawing.Point(0, 493);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(494, 106);
@@ -235,12 +233,17 @@
             this.numUpDownNumberNights.Name = "numUpDownNumberNights";
             this.numUpDownNumberNights.Size = new System.Drawing.Size(182, 28);
             this.numUpDownNumberNights.TabIndex = 13;
+            this.numUpDownNumberNights.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // checkBoxWIFI
             // 
             this.checkBoxWIFI.AutoSize = true;
             this.checkBoxWIFI.Font = new System.Drawing.Font("MV Boli", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxWIFI.Location = new System.Drawing.Point(170, 498);
+            this.checkBoxWIFI.Location = new System.Drawing.Point(167, 449);
             this.checkBoxWIFI.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.checkBoxWIFI.Name = "checkBoxWIFI";
             this.checkBoxWIFI.Size = new System.Drawing.Size(140, 21);
@@ -252,73 +255,54 @@
             // 
             this.numUpDownNumberVacationers.Location = new System.Drawing.Point(245, 339);
             this.numUpDownNumberVacationers.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.numUpDownNumberVacationers.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numUpDownNumberVacationers.Name = "numUpDownNumberVacationers";
             this.numUpDownNumberVacationers.Size = new System.Drawing.Size(182, 28);
             this.numUpDownNumberVacationers.TabIndex = 17;
-            this.numUpDownNumberVacationers.ValueChanged += new System.EventHandler(this.TotalCostCalculate);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("MV Boli", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(52, 448);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(139, 17);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Общая стоимость";
-            // 
-            // txtTotalCost
-            // 
-            this.txtTotalCost.Location = new System.Drawing.Point(245, 437);
-            this.txtTotalCost.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtTotalCost.Name = "txtTotalCost";
-            this.txtTotalCost.ReadOnly = true;
-            this.txtTotalCost.Size = new System.Drawing.Size(182, 28);
-            this.txtTotalCost.TabIndex = 19;
-            // 
             // numUpDownCostVacationers
             // 
+            this.numUpDownCostVacationers.DecimalPlaces = 2;
             this.numUpDownCostVacationers.Location = new System.Drawing.Point(245, 290);
             this.numUpDownCostVacationers.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.numUpDownCostVacationers.Maximum = new decimal(new int[] {
-            -469762048,
-            -590869294,
-            5421010,
+            100000,
+            0,
+            0,
             0});
             this.numUpDownCostVacationers.Name = "numUpDownCostVacationers";
             this.numUpDownCostVacationers.Size = new System.Drawing.Size(182, 28);
             this.numUpDownCostVacationers.TabIndex = 20;
-            this.numUpDownCostVacationers.ValueChanged += new System.EventHandler(this.TotalCostCalculate);
             // 
-            // numeUpDownSurcharges
+            // numUpDownSurcharges
             // 
-            this.numeUpDownSurcharges.Location = new System.Drawing.Point(245, 390);
-            this.numeUpDownSurcharges.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.numeUpDownSurcharges.Maximum = new decimal(new int[] {
-            1661992960,
-            1808227885,
-            5,
+            this.numUpDownSurcharges.Location = new System.Drawing.Point(245, 390);
+            this.numUpDownSurcharges.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.numUpDownSurcharges.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
             0});
-            this.numeUpDownSurcharges.Name = "numeUpDownSurcharges";
-            this.numeUpDownSurcharges.Size = new System.Drawing.Size(182, 28);
-            this.numeUpDownSurcharges.TabIndex = 21;
-            this.numeUpDownSurcharges.ValueChanged += new System.EventHandler(this.TotalCostCalculate);
+            this.numUpDownSurcharges.Name = "numUpDownSurcharges";
+            this.numUpDownSurcharges.Size = new System.Drawing.Size(182, 28);
+            this.numUpDownSurcharges.TabIndex = 21;
             // 
             // AddTourForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(494, 649);
-            this.Controls.Add(this.numeUpDownSurcharges);
+            this.ClientSize = new System.Drawing.Size(494, 599);
+            this.Controls.Add(this.numUpDownSurcharges);
             this.Controls.Add(this.numUpDownCostVacationers);
-            this.Controls.Add(this.txtTotalCost);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.numUpDownNumberVacationers);
             this.Controls.Add(this.checkBoxWIFI);
             this.Controls.Add(this.numUpDownNumberNights);
@@ -336,7 +320,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "AddTourForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AddTourForm";
+            this.Text = "Добавление горящего тура";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -345,7 +329,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumberVacationers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownCostVacationers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numeUpDownSurcharges)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownSurcharges)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,9 +356,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.TextBox txtTotalCost;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown numUpDownCostVacationers;
-        private System.Windows.Forms.NumericUpDown numeUpDownSurcharges;
+        private System.Windows.Forms.NumericUpDown numUpDownSurcharges;
     }
 }

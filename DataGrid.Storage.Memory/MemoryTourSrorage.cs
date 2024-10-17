@@ -7,21 +7,30 @@ using System.Threading.Tasks;
 
 namespace DataGrid.Storage.Memory
 {
+    /// <summary>
+    /// Реализация хранилища туров в памяти.
+    /// </summary>
     public class MemoryTourStorage : ITourStorage
     {
         private List<Tour> tours;
-
+        /// <summary>
+        /// Конструктор класса MemoryTourStorage.
+        /// </summary>
         public MemoryTourStorage()
         {
             tours = new List<Tour>();
         }
-
+        /// <summary>
+        /// Добавляет новый тур в хранилище.
+        /// </summary>
         public Task<Tour> AddAsync(Tour tour)
         {
             tours.Add(tour);
             return Task.FromResult(tour);
         }
-
+        /// <summary>
+        /// Удаляет тур из хранилища по его уникальному идентификатору.
+        /// </summary>
         public Task<bool> DeleteAsync(Guid id)
         {
             var tour = tours.FirstOrDefault(x => x.ID == id);
@@ -33,7 +42,9 @@ namespace DataGrid.Storage.Memory
 
             return Task.FromResult(false);
         }
-
+        /// <summary>
+        /// Обновляет информацию о существующем туре в хранилище.
+        /// </summary>
         public Task EditAsync(Tour tour)
         {
             var target = tours.FirstOrDefault(x => x.ID == tour.ID);
@@ -50,7 +61,9 @@ namespace DataGrid.Storage.Memory
 
             return Task.CompletedTask;
         }
-
+        /// <summary>
+        /// Получает все туры из хранилища.
+        /// </summary>
         public Task<IReadOnlyCollection<Tour>> GetAllAsync()
             => Task.FromResult<IReadOnlyCollection<Tour>>(tours);
     }

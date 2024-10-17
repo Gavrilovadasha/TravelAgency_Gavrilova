@@ -53,8 +53,8 @@
     <Compile Include="Form\AddTourForm.Designer.cs">
       <DependentUpon>AddTourForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class\DataGenerator.cs" />
-    <Compile Include="Class\Extensions.cs" />
+    <Compile Include="src\DataGenerator.cs" />
+    <Compile Include="src\Extensions.cs" />
     <Compile Include="Form\RegisterOfBurningTours.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +109,14 @@
       <Name>DataGrid.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

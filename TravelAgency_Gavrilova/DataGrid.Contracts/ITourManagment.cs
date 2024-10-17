@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace DataGrid.Contracts
 {
+    /// <summary>
+    /// Интерфейс для управления турами.
+    /// </summary>
     public interface ITourManagment
     {
         Task<IReadOnlyCollection<Tour>> GetAllAsync();

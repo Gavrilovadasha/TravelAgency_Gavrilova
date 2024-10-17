@@ -28,15 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterOfBurningTours));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.правкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripBtnAdd = new System.Windows.Forms.ToolStripButton();
-            this.toolStripBtnEdit = new System.Windows.Forms.ToolStripButton();
-            this.toolStripBtnDel = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.DirectionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeparturDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +47,9 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripBtnAdd = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBtnEdit = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBtnDel = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,26 +66,26 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1418, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1418, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // правкаToolStripMenuItem
             // 
             this.правкаToolStripMenuItem.Name = "правкаToolStripMenuItem";
-            this.правкаToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.правкаToolStripMenuItem.Size = new System.Drawing.Size(74, 26);
             this.правкаToolStripMenuItem.Text = "Правка";
             // 
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // toolStrip2
@@ -97,41 +96,11 @@
             this.toolStripBtnAdd,
             this.toolStripBtnEdit,
             this.toolStripBtnDel});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 30);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1418, 27);
+            this.toolStrip2.Size = new System.Drawing.Size(1418, 31);
             this.toolStrip2.TabIndex = 2;
             this.toolStrip2.Text = "toolStrip2";
-            // 
-            // toolStripBtnAdd
-            // 
-            this.toolStripBtnAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripBtnAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBtnAdd.Image")));
-            this.toolStripBtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripBtnAdd.Name = "toolStripBtnAdd";
-            this.toolStripBtnAdd.Size = new System.Drawing.Size(29, 24);
-            this.toolStripBtnAdd.Text = "toolStripButton1";
-            this.toolStripBtnAdd.Click += new System.EventHandler(this.toolStripBtnAdd_Click);
-            // 
-            // toolStripBtnEdit
-            // 
-            this.toolStripBtnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripBtnEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBtnEdit.Image")));
-            this.toolStripBtnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripBtnEdit.Name = "toolStripBtnEdit";
-            this.toolStripBtnEdit.Size = new System.Drawing.Size(29, 24);
-            this.toolStripBtnEdit.Text = "toolStripButton2";
-            this.toolStripBtnEdit.Click += new System.EventHandler(this.toolStripBtnEdit_Click);
-            // 
-            // toolStripBtnDel
-            // 
-            this.toolStripBtnDel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripBtnDel.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBtnDel.Image")));
-            this.toolStripBtnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripBtnDel.Name = "toolStripBtnDel";
-            this.toolStripBtnDel.Size = new System.Drawing.Size(29, 24);
-            this.toolStripBtnDel.Text = "toolStripButton3";
-            this.toolStripBtnDel.Click += new System.EventHandler(this.toolStripBtnDel_Click);
             // 
             // dataGridView1
             // 
@@ -149,13 +118,13 @@
             this.WIFI,
             this.TotalCost});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 55);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 61);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1418, 486);
+            this.dataGridView1.Size = new System.Drawing.Size(1418, 480);
             this.dataGridView1.TabIndex = 3;
             // 
             // DirectionColumn
@@ -273,6 +242,36 @@
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(151, 20);
             this.toolStripStatusLabel4.Text = "toolStripStatusLabel4";
+            // 
+            // toolStripBtnAdd
+            // 
+            this.toolStripBtnAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripBtnAdd.Image = global::TravelAgency_Gavrilova.Properties.Resources.add;
+            this.toolStripBtnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnAdd.Name = "toolStripBtnAdd";
+            this.toolStripBtnAdd.Size = new System.Drawing.Size(29, 28);
+            this.toolStripBtnAdd.Text = "toolStripButton1";
+            this.toolStripBtnAdd.Click += new System.EventHandler(this.toolStripBtnAdd_Click);
+            // 
+            // toolStripBtnEdit
+            // 
+            this.toolStripBtnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripBtnEdit.Image = global::TravelAgency_Gavrilova.Properties.Resources.edit;
+            this.toolStripBtnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnEdit.Name = "toolStripBtnEdit";
+            this.toolStripBtnEdit.Size = new System.Drawing.Size(29, 28);
+            this.toolStripBtnEdit.Text = "toolStripButton2";
+            this.toolStripBtnEdit.Click += new System.EventHandler(this.toolStripBtnEdit_Click);
+            // 
+            // toolStripBtnDel
+            // 
+            this.toolStripBtnDel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripBtnDel.Image = global::TravelAgency_Gavrilova.Properties.Resources.delete;
+            this.toolStripBtnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnDel.Name = "toolStripBtnDel";
+            this.toolStripBtnDel.Size = new System.Drawing.Size(29, 28);
+            this.toolStripBtnDel.Text = "toolStripButton3";
+            this.toolStripBtnDel.Click += new System.EventHandler(this.toolStripBtnDel_Click);
             // 
             // RegisterOfBurningTours
             // 
