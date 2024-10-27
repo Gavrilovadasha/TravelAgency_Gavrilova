@@ -1,10 +1,10 @@
-﻿using DataGrid.Contracts.Models;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using DataGrid.Contracts.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TravelAgency_Gavrilova

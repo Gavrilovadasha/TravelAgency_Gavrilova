@@ -1,9 +1,10 @@
-﻿using DataGrid.Contracts;
-using DataGrid.Contracts.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataGrid.Contracts;
+using DataGrid.Contracts.Models;
+
 
 namespace DataGrid.Storage.Memory
 {

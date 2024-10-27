@@ -1,10 +1,10 @@
-﻿using DataGrid.Contracts.Models;
-using DataGrid.Contracts;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
 using TourManagement;
 using System.Linq;
+using DataGrid.Contracts;
+using DataGrid.Contracts.Models;
 
 /// <summary>
 /// Управляет операциями с турами.
