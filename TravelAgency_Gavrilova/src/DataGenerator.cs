@@ -1,6 +1,6 @@
-﻿using DataGrid.Contracts.Models;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using DataGrid.Contracts.Models;
 
 namespace TravelAgency_Gavrilova
 {

@@ -1,4 +1,5 @@
-﻿using DataGrid.Contracts.Models;
+﻿
+using DataGrid.Contracts.Models;
 
 namespace TourManagement
 {
