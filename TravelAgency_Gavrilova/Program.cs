@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataGrid.Storage.Memory;
+using Microsoft.Extensions.Logging;
+
 
 namespace TravelAgency_Gavrilova
 {
@@ -15,10 +14,13 @@ namespace TravelAgency_Gavrilova
         [STAThread]
         static void Main()
         {
+            ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole());
+            ILogger logger = factory.CreateLogger("TravelAgency");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var storage = new MemoryTourStorage();
-            var manager = new TourManagment(storage);
+            var manager = new TourManagment(storage, logger);
 
             Application.Run(new RegisterOfBurningTours(manager));
         }

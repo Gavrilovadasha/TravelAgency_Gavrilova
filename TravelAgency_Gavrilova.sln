@@ -3,18 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridTravelAgency", "TravelAgency_Gavrilova\DataGridTravelAgency.csproj", "{DDE7336A-A822-485D-93E9-2C43BDAB8710}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{540B5872-F53C-4F19-91CC-0B53E1AF7F8B}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid.Contracts", "DataGrid.Contracts\DataGrid.Contracts.csproj", "{BC87655B-FD41-4AAF-A122-4E1798EAEA2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGrid.Contracts", "DataGrid.Contracts\DataGrid.Contracts.csproj", "{BC87655B-FD41-4AAF-A122-4E1798EAEA2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid.Storage.Memory", "DataGrid.Storage.Memory\DataGrid.Storage.Memory.csproj", "{C8D3F83B-A5ED-4E17-A0A8-0F63691D2D75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGrid.Storage.Memory", "DataGrid.Storage.Memory\DataGrid.Storage.Memory.csproj", "{C8D3F83B-A5ED-4E17-A0A8-0F63691D2D75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid.TourManagment", "DataGrid.TourManagment\DataGrid.TourManagment.csproj", "{FC6DF9A8-5563-48A6-A3F8-BD5A3103B5BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGrid.TourManagment", "DataGrid.TourManagment\DataGrid.TourManagment.csproj", "{FC6DF9A8-5563-48A6-A3F8-BD5A3103B5BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency_Gavrilova", "TravelAgency_Gavrilova\TravelAgency_Gavrilova.csproj", "{66C65188-BB02-491A-953B-A4312A715C97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +22,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DDE7336A-A822-485D-93E9-2C43BDAB8710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDE7336A-A822-485D-93E9-2C43BDAB8710}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDE7336A-A822-485D-93E9-2C43BDAB8710}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDE7336A-A822-485D-93E9-2C43BDAB8710}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BC87655B-FD41-4AAF-A122-4E1798EAEA2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BC87655B-FD41-4AAF-A122-4E1798EAEA2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC87655B-FD41-4AAF-A122-4E1798EAEA2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,6 +34,10 @@ Global
 		{FC6DF9A8-5563-48A6-A3F8-BD5A3103B5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC6DF9A8-5563-48A6-A3F8-BD5A3103B5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC6DF9A8-5563-48A6-A3F8-BD5A3103B5BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66C65188-BB02-491A-953B-A4312A715C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66C65188-BB02-491A-953B-A4312A715C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66C65188-BB02-491A-953B-A4312A715C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66C65188-BB02-491A-953B-A4312A715C97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

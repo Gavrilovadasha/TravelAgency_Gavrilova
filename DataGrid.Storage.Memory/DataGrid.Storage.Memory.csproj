@@ -2,10 +2,29 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>PRGH.USER-GAVRILOVA.travelAgensyStorageMemory</PackageId>
+    <Title>Travel Agency DataGrid.Storage.Memory</Title>
+    <Version>1.0.0</Version>
+    <Authors>USER-GAVRILOVA_DA</Authors>
+    <Company>PKGH</Company>
+    <Description>package for studying</Description>
+    <Product>toursReestre</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/TaniachiFractal/DataGrid_NailWarehouse</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataGrid.Contracts\DataGrid.Contracts.csproj" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataGrid.Contracts\DataGrid.Contracts.csproj">
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <IncludeAssets>DataGrid.Contracts.dll</IncludeAssets>
+    </ProjectReference>
+  </ItemGroup>
+
+ 
 
 </Project>

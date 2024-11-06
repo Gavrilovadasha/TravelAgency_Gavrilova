@@ -62,10 +62,14 @@ namespace DataGrid.Storage.Memory
 
             return Task.CompletedTask;
         }
+
+
         /// <summary>
         /// Получает все туры из хранилища.
         /// </summary>
         public Task<IReadOnlyCollection<Tour>> GetAllAsync()
             => Task.FromResult<IReadOnlyCollection<Tour>>(tours);
+
+
     }
 }
