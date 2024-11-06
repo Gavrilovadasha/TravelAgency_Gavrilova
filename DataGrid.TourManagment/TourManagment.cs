@@ -78,7 +78,6 @@ public class TourManagment : ITourManagment
     public Task<IReadOnlyCollection<Tour>> GetAllAsync()
     {
         var tours = tourStorage.GetAllAsync().Result;
-
         foreach (var tour in tours)
         {
             tour.TotalCost = (int)tour.CalculateTotalCost();
