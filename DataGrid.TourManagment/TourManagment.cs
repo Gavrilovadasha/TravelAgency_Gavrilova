@@ -5,6 +5,9 @@ using TourManagement;
 using System.Linq;
 using DataGrid.Contracts;
 using DataGrid.Contracts.Models;
+using Microsoft.Extensions.Logging;
+using System.Diagnostics;
+
 
 /// <summary>
 /// Управляет операциями с турами.
@@ -12,10 +15,12 @@ using DataGrid.Contracts.Models;
 public class TourManagment : ITourManagment
 {
     private ITourStorage tourStorage;
+    private readonly ILogger logger;
 
-    public TourManagment(ITourStorage tourStorage)
+    public TourManagment(ITourStorage tourStorage, ILogger logger)
     {
         this.tourStorage = tourStorage;
+        this.logger = logger;
     }
 
     /// <summary>
@@ -23,9 +28,17 @@ public class TourManagment : ITourManagment
     /// </summary>
     public async Task<Tour> AddAsync(Tour tour)
     {
+        var timer = Stopwatch.StartNew();
         var result = await tourStorage.AddAsync(tour);
         result.TotalCost = (int)tour.CalculateTotalCost();
+
+        timer.Stop();
+
+        logger.LogInformation("Добавление произошло за {} мс", timer.ElapsedMilliseconds);
+        logger.LogInformation($"Добавлен тур: {result.Direction}, Идентификатор: {result.ID},Дата вылета: {result.DeparturDate}, Количество ночей: {result.NumberNights}, Стоимость за отдыхающего {result.CostVacationers}, Количество отдыхающих {result.NumberVacationers}, Доплаты {result.Surcharges}, С WI-FI: {result.WIFI}, Итоговая стоимость: {result.TotalCost}");
         return result;
+
+
     }
 
     /// <summary>
@@ -33,7 +46,13 @@ public class TourManagment : ITourManagment
     /// </summary>
     public async Task<bool> DeleteAsync(Guid id)
     {
+        var timer = Stopwatch.StartNew();
         var result = await tourStorage.DeleteAsync(id);
+
+        timer.Stop();
+
+        logger.LogInformation("Удаление произошло за {} мс", timer.ElapsedMilliseconds);
+        logger.LogInformation($"Удален тур: {id}");
         return result;
     }
 
@@ -42,7 +61,14 @@ public class TourManagment : ITourManagment
     /// </summary>
     public Task EditAsync(Tour tour)
     {
+        var timer = Stopwatch.StartNew();
+
         tour.TotalCost = (int)tour.CalculateTotalCost();
+        timer.Stop();
+
+        logger.LogInformation("Редактирование произошло за {} мс", timer.ElapsedMilliseconds);
+        logger.LogInformation($"Отредактирован тур: {tour.Direction}, Идентификатор: {tour.ID},Дата вылета: {tour.DeparturDate}, Количество ночей: {tour.NumberNights}, Стоимость за отдыхающего {tour.CostVacationers}, Количество отдыхающих {tour.NumberVacationers}, Доплаты {tour.Surcharges}, С WI-FI: {tour.WIFI}, Итоговая стоимость: {tour.TotalCost}");
+
         return tourStorage.EditAsync(tour);
     }
 
@@ -52,7 +78,6 @@ public class TourManagment : ITourManagment
     public Task<IReadOnlyCollection<Tour>> GetAllAsync()
     {
         var tours = tourStorage.GetAllAsync().Result;
-
         foreach (var tour in tours)
         {
             tour.TotalCost = (int)tour.CalculateTotalCost();
