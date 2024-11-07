@@ -11,7 +11,7 @@
     <Description>package for studying</Description>
     <Product>toursReestre</Product>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/TaniachiFractal/DataGrid_NailWarehouse</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Gavrilovadasha/TravelAgency_Gavrilova</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
