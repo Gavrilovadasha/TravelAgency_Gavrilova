@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
 using DataGrid.Storage.Memory;
+using DataGrid.TourManagment;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Extensions.Logging;
 
 
 namespace TravelAgency_Gavrilova
@@ -14,11 +17,17 @@ namespace TravelAgency_Gavrilova
         [STAThread]
         static void Main()
         {
-            ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole());
-            ILogger logger = factory.CreateLogger("TravelAgency");
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            var serilogLogger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .WriteTo.Seq("http://localhost:5341", apiKey: "UnT4YNRs687dCwJZa54N")
+                .CreateLogger();
+
+            var logger = new SerilogLoggerFactory(serilogLogger)
+                .CreateLogger("dataGrid");
+
             var storage = new MemoryTourStorage();
             var manager = new TourManagment(storage, logger);
 
