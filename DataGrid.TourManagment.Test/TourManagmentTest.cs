@@ -214,7 +214,7 @@ namespace DataGrid.TourManagment.Test
         }
 
         /// <summary>
-        /// Получить 3 стандартных гвоздя из хранилища
+        /// Проверяет корректность работы метода GetStats.
         /// </summary>
         [Fact]
         public async Task GetStatsShouldWork()
