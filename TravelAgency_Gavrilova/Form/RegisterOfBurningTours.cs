@@ -1,4 +1,4 @@
-﻿using DataGrid.Contracts;
+﻿using DataGrid.Contracts.Interface;
 using DataGrid.Contracts.Models;
 using System;
 using System.Text;

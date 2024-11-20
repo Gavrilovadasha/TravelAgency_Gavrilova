@@ -16,6 +16,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGrid.TourManagment", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency_Gavrilova", "TravelAgency_Gavrilova\TravelAgency_Gavrilova.csproj", "{66C65188-BB02-491A-953B-A4312A715C97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid.TourManagment.Test", "DataGrid.TourManagment.Test\DataGrid.TourManagment.Test.csproj", "{A05C4117-7406-471C-BA12-A3375CE3946C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid.Storage.Memory.Test", "DataGrid.Storage.Memory.Test\DataGrid.Storage.Memory.Test.csproj", "{9DCAE5F9-7DB9-4FA8-8FAE-502174733AF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,14 @@ Global
 		{66C65188-BB02-491A-953B-A4312A715C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66C65188-BB02-491A-953B-A4312A715C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66C65188-BB02-491A-953B-A4312A715C97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05C4117-7406-471C-BA12-A3375CE3946C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05C4117-7406-471C-BA12-A3375CE3946C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05C4117-7406-471C-BA12-A3375CE3946C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05C4117-7406-471C-BA12-A3375CE3946C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DCAE5F9-7DB9-4FA8-8FAE-502174733AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DCAE5F9-7DB9-4FA8-8FAE-502174733AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DCAE5F9-7DB9-4FA8-8FAE-502174733AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DCAE5F9-7DB9-4FA8-8FAE-502174733AF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

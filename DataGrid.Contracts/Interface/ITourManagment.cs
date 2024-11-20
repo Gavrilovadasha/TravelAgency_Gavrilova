@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DataGrid.Contracts
+namespace DataGrid.Contracts.Interface
 {
     /// <summary>
     /// Интерфейс для управления турами.

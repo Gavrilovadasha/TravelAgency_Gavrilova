@@ -1,7 +1,7 @@
 ﻿
 using DataGrid.Contracts.Models;
 
-namespace TourManagement
+namespace DataGrid.TourManagment.Models
 {
     /// <summary>
     /// Модель статистики туров.
