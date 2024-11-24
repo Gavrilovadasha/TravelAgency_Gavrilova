@@ -77,14 +77,14 @@ namespace DataGrid.TourManagment
         /// <summary>
         /// Получает все туры асинхронно.
         /// </summary>
-        public Task<IReadOnlyCollection<Tour>> GetAllAsync()
+        public async Task<IReadOnlyCollection<Tour>> GetAllAsync()
         {
-            var tours = tourStorage.GetAllAsync().Result;
+            var tours = await tourStorage.GetAllAsync();
             foreach (var tour in tours)
             {
                 tour.TotalCost = (int)tour.CalculateTotalCost();
             }
-            return Task.FromResult(tours);
+            return tours;
         }
 
         /// <summary>

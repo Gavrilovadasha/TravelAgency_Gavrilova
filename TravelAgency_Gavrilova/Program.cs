@@ -28,7 +28,7 @@ namespace TravelAgency_Gavrilova
             var logger = new SerilogLoggerFactory(serilogLogger)
                 .CreateLogger("dataGrid");
 
-            var storage = new MemoryTourStorage();
+            var storage = new DBTourStorage();
             var manager = new TourManagment(storage, logger);
 
             Application.Run(new RegisterOfBurningTours(manager));
