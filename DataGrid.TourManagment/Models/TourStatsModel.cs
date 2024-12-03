@@ -17,7 +17,6 @@ namespace DataGrid.TourManagment.Models
         /// Общий количество туров.
         /// </summary>
         public int TotalAmountTours { get; set; }
-
         /// <summary>
         /// Количество туров с дополнительными сборами.
         /// </summary>

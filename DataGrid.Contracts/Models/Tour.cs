@@ -5,7 +5,7 @@ namespace DataGrid.Contracts.Models
     /// <summary>
     /// Поля для ввода информации о туре
     /// </summary>
-    public class Tour 
+    public class Tour
     {
         public Guid ID { get; set; }
 

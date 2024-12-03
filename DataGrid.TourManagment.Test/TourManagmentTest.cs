@@ -20,14 +20,14 @@ namespace DataGrid.TourManagment.Test
     {
         private readonly ITourManagment tourManagment;
         private readonly Mock<ITourStorage> tourStorageMock;
-        private readonly Mock<ILogger> loggerMock;
+        private readonly Mock<ILogger<TourManagment>> loggerMock;
 
         private readonly Task<IReadOnlyCollection<Tour>> filledDefaultNailList;
 
         public TourManagementTest()
         {
             tourStorageMock = new Mock<ITourStorage>();
-            loggerMock = new Mock<ILogger>();
+            loggerMock = new Mock<ILogger<TourManagment>>();
             loggerMock.Setup(x => x.Log(LogLevel.Information,
                It.IsAny<EventId>(),
                It.IsAny<It.IsAnyType>(),

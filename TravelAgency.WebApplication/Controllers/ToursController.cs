@@ -6,11 +6,11 @@ using TravelAgency.WebApplication.Models;
 
 namespace TravelAgency.WebApplication.Controllers
 {
-    public class TourController : Controller
+    public class ToursController : Controller
     {
 
         private readonly ITourManagment tourManagment;
-        public TourController(ITourManagment tourManagment)
+        public ToursController(ITourManagment tourManagment)
         {
             this.tourManagment = tourManagment;
         }

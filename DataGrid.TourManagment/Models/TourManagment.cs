@@ -16,10 +16,10 @@ namespace DataGrid.TourManagment
     /// </summary>
     public class TourManagment : ITourManagment
     {
-        private ITourStorage tourStorage;
-        private readonly ILogger logger;
+        private readonly ITourStorage tourStorage;
+        private readonly ILogger<TourManagment> logger;
 
-        public TourManagment(ITourStorage tourStorage, ILogger logger)
+        public TourManagment(ITourStorage tourStorage, ILogger<TourManagment> logger)
         {
             this.tourStorage = tourStorage;
             this.logger = logger;

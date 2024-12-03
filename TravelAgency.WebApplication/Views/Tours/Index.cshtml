@@ -1,0 +1,62 @@
+﻿@using DataGrid.Contracts.Models;
+@model IReadOnlyCollection<Tour>
+@{
+    ViewData["Title"] = "Список туров";
+    var stats = ViewData[nameof(ITourStats)] as ITourStats;
+}
+
+<h2>Список туров</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Добавить новый тур</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Направление</th>
+            <th>Дата вылета</th>
+            <th>Кол-во ночей</th>
+            <th>Стоимость за одного отдыхающего</th>
+            <th>Количество отдыхающих</th>
+            <th>Доплаты</th>
+            <th>Цена</th>
+            <th>Наличие WI-FI</th>
+            <th>Итоговая стоимость</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tour in Model)
+        {
+            <tr>
+                <td>@tour.Direction</td>
+                <td>@tour.DeparturDate</td>
+                <td>@tour.NumberNights</td>
+                <td>@tour.CostVacationers</td>
+                <td>@tour.NumberVacationers</td>
+                <td>@tour.Surcharges</td>
+                <td>@(tour.CostVacationers * tour.NumberVacationers)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@tour.ID" class="btn btn-warning"
+                       onclick="return confirm('Вы уверены, что хотите изменить этот тур?');">
+                        Изменить
+                    </a>
+
+                    <form asp-action="Delete" asp-route-id="@tour.ID" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger"
+                                onclick="return confirm('Вы уверены, что хотите удалить этот тур?');">
+                            Удалить
+                        </button>
+                    </form>
+                </td> 
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

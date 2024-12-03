@@ -1,37 +1,47 @@
 using DataGrid.Contracts;
+using DataGrid.Contracts.Interface;
+using DataGrid.Storage.Memory;
 using DataGrid.DataStorage.Entity;
 using DataGrid.TourManagment;
 using Serilog;
-internal class Program
+
+namespace TravelAgency.WebApplication
 {
-    private static void Main(string[] args)
+    public static class Program
     {
-        var builder = WebApplication.CreateBuilder(args);
-
-        // Add services to the container.
-        builder.Services.AddControllersWithViews();
-
-        var app = builder.Build();
-
-        // Configure the HTTP request pipeline.
-        if (!app.Environment.IsDevelopment())
+        private static void Main(string[] args)
         {
-            app.UseExceptionHandler("/Home/Error");
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-            app.UseHsts();
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Seq("http://localhost:5341", apiKey: "UnT4YNRs687dCwJZa54N")
+                .CreateLogger();
+
+            var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);
+            builder.Services.AddControllersWithViews();
+
+            builder.Services.AddSingleton<ITourStorage, DBTourStorage>();
+            builder.Services.AddScoped<ITourManagment, TourManagment>();
+            builder.Services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
+
+            var app = builder.Build();
+
+            if (!app.Environment.IsDevelopment())
+            {
+                app.UseExceptionHandler("/Tours/Error");
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseRouting();
+            app.UseAuthorization();
+
+            app.MapControllerRoute(
+                "default",
+                "{controller=Tours}/{action=Index}/{id?}");
+
+
+            app.Run();
         }
-
-        app.UseHttpsRedirection();
-        app.UseStaticFiles();
-
-        app.UseRouting();
-
-        app.UseAuthorization();
-
-        app.MapControllerRoute(
-            name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}");
-
-        app.Run();
     }
+
 }

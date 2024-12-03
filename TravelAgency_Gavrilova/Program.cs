@@ -26,7 +26,7 @@ namespace TravelAgency_Gavrilova
                 .CreateLogger();
 
             var logger = new SerilogLoggerFactory(serilogLogger)
-                .CreateLogger("dataGrid");
+               .CreateLogger<TourManagment>();
 
             var storage = new DBTourStorage();
             var manager = new TourManagment(storage, logger);

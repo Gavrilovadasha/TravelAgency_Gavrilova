@@ -1,0 +1,51 @@
+﻿@using DataGrid.Contracts.Models
+@model Tour
+
+<h1>Создание нового тура</h1>
+
+<form asp-action="Create" method="post">
+    <div>
+        <div class="form-group">
+            <label asp-for="Direction"></label>
+            <input asp-for="Direction" class="form-control" />
+            <span asp-validation-for="Direction" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DeparturDate"></label>
+            <input asp-for="DeparturDate" class="form-control" />
+            <span asp-validation-for="DeparturDate" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="NumberNights"></label>
+            <input asp-for="NumberNights" class="form-control" />
+            <span asp-validation-for="NumberNights" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CostVacationers"></label>
+            <input asp-for="CostVacationers" class="form-control" />
+            <span asp-validation-for="CostVacationers" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="NumberVacationers"></label>
+            <input asp-for="NumberVacationers" class="form-control" />
+            <span asp-validation-for="NumberVacationers" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Surcharges"></label>
+            <input asp-for="Surcharges" class="form-control" />
+            <span asp-validation-for="Surcharges" class="text-danger"></span>
+        </div>
+
+        <div class="form-check">
+            <input asp-for="WIFI" class="form-check-input" type="checkbox" />
+            <label asp-for="WIFI" class="form-check-label"></label>
+            <span asp-validation-for="WIFI" class="text-danger"></span>
+        </div>
+
+        <button type="submit">Сохранить</button>
+</form>
