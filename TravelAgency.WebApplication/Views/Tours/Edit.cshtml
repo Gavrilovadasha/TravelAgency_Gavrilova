@@ -1,0 +1,65 @@
+﻿@using DataGrid.Contracts.Models;
+@model Tour
+
+
+<h2>Изменить существующий товар</h2>
+
+<form asp-action="Edit" method="post">
+	<div>
+		<div class="form-group">
+			<select class="form-control" id="Direction" name="Direction">
+				<option value="">Выберите направление</option>
+				<option value="1">Турция</option>
+				<option value="2">Испания</option>
+				<option value="3">Италия</option>
+				<option value="4">Франция</option>
+				<option value="5">Шушары</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label asp-for="DeparturDate"></label>
+			<input asp-for="DeparturDate" class="form-control" />
+			<span asp-validation-for="DeparturDate" class="text-danger"></span>
+		</div>
+
+		<div class="form-group">
+			<label asp-for="NumberNights"></label>
+			<input asp-for="NumberNights" class="form-control" />
+			<span asp-validation-for="NumberNights" class="text-danger"></span>
+		</div>
+
+		<div class="form-group">
+			<label asp-for="CostVacationers"></label>
+			<input asp-for="CostVacationers" class="form-control" />
+			<span asp-validation-for="CostVacationers" class="text-danger"></span>
+		</div>
+
+		<div class="form-group">
+			<label asp-for="NumberVacationers"></label>
+			<input asp-for="NumberVacationers" class="form-control" />
+			<span asp-validation-for="NumberVacationers" class="text-danger"></span>
+		</div>
+
+		<div class="form-group">
+			<label asp-for="Surcharges"></label>
+			<input asp-for="Surcharges" class="form-control" />
+			<span asp-validation-for="Surcharges" class="text-danger"></span>
+		</div>
+
+		<div class="form-check">
+			<input asp-for="WIFI" class="form-check-input" type="checkbox" />
+			<label asp-for="WIFI" class="form-check-label"></label>
+			<span asp-validation-for="WIFI" class="text-danger"></span>
+		</div>
+    <button type="submit" class="btn btn-primary"
+            style="margin-top: 15px">
+        Сохранить тур
+    </button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

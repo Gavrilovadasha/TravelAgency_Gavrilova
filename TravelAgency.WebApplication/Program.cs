@@ -11,7 +11,22 @@ namespace TravelAgency.WebApplication
     {
         private static void Main(string[] args)
         {
+            // Проверка соединения с базой данных
+            using (var context = new DataGridContext())
+            {
+                var canConnect = context.Database.Exists();
+                Console.WriteLine($"Can connect to database: {canConnect}");
+            }
+
+            using (var context = new DataGridContext())
+            {
+                var tours = context.Tours.ToList();
+                Console.WriteLine($"Tours count: {tours.Count}");
+            }
+
+
             Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
                 .WriteTo.Seq("http://localhost:5341", apiKey: "UnT4YNRs687dCwJZa54N")
                 .CreateLogger();
 
@@ -36,8 +51,8 @@ namespace TravelAgency.WebApplication
             app.UseAuthorization();
 
             app.MapControllerRoute(
-                "default",
-                "{controller=Tours}/{action=Index}/{id?}");
+               name: "default",
+               pattern: "{controller=Tours}/{action=Index}/{id?}");
 
 
             app.Run();

@@ -18,7 +18,11 @@
   <ItemGroup>
     <ProjectReference Include="..\DataGrid.Contracts\DataGrid.Contracts.csproj" />
     <ProjectReference Include="..\DataGrid.DataStorage.Entity\DataGrid.DataStorage.Entity.csproj" />
+    <ProjectReference Include="..\DataGrid.Storage.Memory.Test\DataGrid.Storage.Memory.Test.csproj" />
+    <ProjectReference Include="..\DataGrid.Storage.Memory\DataGrid.Storage.Memory.csproj" />
+    <ProjectReference Include="..\DataGrid.TourManagment.Test\DataGrid.TourManagment.Test.csproj" />
     <ProjectReference Include="..\DataGrid.TourManagment\DataGrid.TourManagment.csproj" />
+    <ProjectReference Include="..\TravelAgency_Gavrilova\TravelAgency_Gavrilova.csproj" />
   </ItemGroup>
 
 </Project>

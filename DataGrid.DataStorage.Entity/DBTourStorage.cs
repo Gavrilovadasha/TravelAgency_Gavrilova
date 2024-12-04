@@ -51,8 +51,10 @@ namespace DataGrid.Storage.Memory
                     target.NumberVacationers = tour.NumberVacationers;
                     target.WIFI = tour.WIFI;
                     target.Surcharges = tour.Surcharges;
+
                 }
                 await context.SaveChangesAsync();
+
             }
         }
 
