@@ -1,8 +1,6 @@
-using System.Diagnostics;
 using DataGrid.Contracts.Interface;
 using DataGrid.Contracts.Models;
 using Microsoft.AspNetCore.Mvc;
-using TravelAgency.WebApplication.Models;
 
 namespace TravelAgency.WebApplication.Controllers
 {
@@ -20,12 +18,12 @@ namespace TravelAgency.WebApplication.Controllers
         /// </summary>
         public async Task<IActionResult> Index()
         {
-            var products = tourManagment.GetAllAsync();
+            var tours = tourManagment.GetAllAsync();
             var stats = tourManagment.GetStatsAsync();
-            await Task.WhenAll(products, stats);
+            await Task.WhenAll(tours, stats);
 
             ViewData[nameof(ITourManagment)] = stats.Result;
-            return View(products.Result);
+            return View(tours.Result);
         }
 
         /// <summary>
@@ -78,8 +76,8 @@ namespace TravelAgency.WebApplication.Controllers
                 return View(tour);
             }
 
-            var products = await tourManagment.GetAllAsync();
-            var existingProduct = products.FirstOrDefault(p => p.ID == id);
+            var tours = await tourManagment.GetAllAsync();
+            var existingProduct = tours.FirstOrDefault(p => p.ID == id);
             if (existingProduct == null)
             {
                 return NotFound();

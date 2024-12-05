@@ -26,5 +26,13 @@ namespace DataGrid.TourManagment.Models
         /// Общий суммарный объем дополнительных сборов.
         /// </summary>
         public int TotalAmountSurcharges { get; set; }
+
+        long ITourStats.CountTour => throw new System.NotImplementedException();
+
+        long ITourStats.TotalAmountTours => throw new System.NotImplementedException();
+
+        long ITourStats.CountToursSurcharges => throw new System.NotImplementedException();
+
+        long ITourStats.TotalAmountSurcharges => throw new System.NotImplementedException();
     }
 }

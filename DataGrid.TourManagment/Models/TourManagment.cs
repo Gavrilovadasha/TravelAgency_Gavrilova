@@ -102,8 +102,8 @@ namespace DataGrid.TourManagment
             return new TourStatsModel
             {
                 CountTour = result.Count,
-                TotalAmountTours = result.Sum(x => x.TotalCost),
-                CountToursSurcharges = result.Where(x => x.Surcharges > 0).Count(),
+                TotalAmountTours = (int)result.Sum(x => (long)x.TotalCost),
+                CountToursSurcharges = result.Where(x => (long)x.Surcharges > 0).Count(),
                 TotalAmountSurcharges = result.Sum(x => x.Surcharges),
             };
         }

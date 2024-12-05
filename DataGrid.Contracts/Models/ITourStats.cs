@@ -6,13 +6,13 @@ namespace DataGrid.Contracts.Models
     /// </summary>
     public interface ITourStats
     {
-        int CountTour { get; }
+        long CountTour { get; }
 
-        int TotalAmountTours { get; }
+        long TotalAmountTours { get; }
 
-        int CountToursSurcharges { get; }
+        long CountToursSurcharges { get; }
 
-        int TotalAmountSurcharges { get; }
+        long TotalAmountSurcharges { get; }
 
     }
 }

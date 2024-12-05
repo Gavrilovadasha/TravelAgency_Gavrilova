@@ -27,7 +27,7 @@ namespace TravelAgency.WebApplication
 
             if (!app.Environment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Tours/Error");
+                app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
 
